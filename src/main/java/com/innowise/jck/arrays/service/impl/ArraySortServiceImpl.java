@@ -17,17 +17,13 @@ public class ArraySortServiceImpl implements ArraySortService {
     public void bubbleSort(CustomArray customArray) throws CustomArrayException {
         logger.info("Starting bubbleSort operation");
 
-        // Rule 21: Isolate the primitive array to prevent chaining syntax
         int[] elements = customArray.getElements();
-
         if (elements == null) {
             logger.error("Array is null, sorting aborted");
             throw new CustomArrayException("Cannot sort a null array reference");
         }
 
         int length = elements.length;
-
-        // Classic bubble sort algorithm logic
         for (int i = 0; i < length - 1; i++) {
             for (int j = 0; j < length - i - 1; j++) {
                 if (elements[j] > elements[j + 1]) {
@@ -38,6 +34,8 @@ public class ArraySortServiceImpl implements ArraySortService {
             }
         }
 
+        customArray.setElements(elements);
+
         logger.info("BubbleSort operation completed successfully");
     }
 
@@ -46,26 +44,24 @@ public class ArraySortServiceImpl implements ArraySortService {
         logger.info("Starting insertionSort operation");
 
         int[] elements = customArray.getElements();
-
         if (elements == null) {
             logger.error("Array is null, sorting aborted");
             throw new CustomArrayException("Cannot sort a null array reference");
         }
 
         int length = elements.length;
-
-        // Classic insertion sort algorithm logic
-        for (int i = 1; i < length; ++i) {
+        for (int i = 1; i < length; i++) {
             int key = elements[i];
             int j = i - 1;
 
-            // Move elements that are greater than key to one position ahead
             while (j >= 0 && elements[j] > key) {
                 elements[j + 1] = elements[j];
                 j = j - 1;
             }
             elements[j + 1] = key;
         }
+
+        customArray.setElements(elements);
 
         logger.info("InsertionSort operation completed successfully");
     }
