@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 public class CustomArrayFactoryImpl implements CustomArrayFactory {
 
     //Initialization of Log4j2
-    private static final Logger logger = (Logger) LogManager.getLogger(CustomArrayFactoryImpl.class);
+    private static final Logger logger = LogManager.getLogger(CustomArrayFactoryImpl.class);
     //Default constructor
     public CustomArrayFactoryImpl() {
     }
