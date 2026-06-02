@@ -1,6 +1,7 @@
-package com.innowise.jck.arrays.factory;
+package com.innowise.jck.arrays.factory.impl;
 
 import com.innowise.jck.arrays.entity.CustomArray;
+import com.innowise.jck.arrays.factory.CustomArrayFactory;
 import org.apache.logging.log4j.LogManager;
 import java.util.logging.Logger;
 

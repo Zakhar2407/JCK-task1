@@ -1,5 +1,6 @@
-package com.innowise.jck.arrays.parser;
+package com.innowise.jck.arrays.parser.impl;
 
+import com.innowise.jck.arrays.parser.ArrayLineParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

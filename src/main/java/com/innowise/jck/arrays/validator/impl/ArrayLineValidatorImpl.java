@@ -1,5 +1,6 @@
-package com.innowise.jck.arrays.validator;
+package com.innowise.jck.arrays.validator.impl;
 
+import com.innowise.jck.arrays.validator.ArrayLineValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
