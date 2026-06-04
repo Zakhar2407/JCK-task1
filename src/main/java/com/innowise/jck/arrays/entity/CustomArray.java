@@ -54,6 +54,9 @@ public class CustomArray extends AbstractArrayStructure {
 
     @Override
     public String toString() {
-        return Arrays.toString(elements);
+        final StringBuilder sb = new StringBuilder("CustomArray{");
+        sb.append("elements=").append(Arrays.toString(elements));
+        sb.append('}');
+        return sb.toString();
     }
 }
