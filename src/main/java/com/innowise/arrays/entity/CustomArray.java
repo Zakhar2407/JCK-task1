@@ -48,6 +48,11 @@ public class CustomArray extends AbstractArrayStructure {
     }
 
     @Override
+    public int size() {
+        return elements.length;
+    }
+
+    @Override
     public int hashCode() {
         return Arrays.hashCode(elements);
     }
