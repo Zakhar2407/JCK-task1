@@ -26,7 +26,7 @@ public class ArrayLineValidatorImpl implements ArrayLineValidator {
         //Creating trimming validation
         String trimmedLine = line.trim();
 
-        if (trimmedLine.isEmpty()) {
+        if (trimmedLine.isBlank()) {
             logger.info("Validation skipped: line is empty or contains only spaces");
             return false;
         }
@@ -34,11 +34,7 @@ public class ArrayLineValidatorImpl implements ArrayLineValidator {
         //isMatches
         boolean matches = trimmedLine.matches(VALID_ARRAY_REGEX);
 
-        if (!matches) {
-            logger.warn("Validation failed for line: [{}]", trimmedLine);
-        } else {
-            logger.info("Line successfully validated");
-        }
+        logger.info("Validation result for line [{}]: {}", trimmedLine, matches);
 
         return matches;
     }
