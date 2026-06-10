@@ -13,9 +13,6 @@ public class CustomArrayServiceImpl implements CustomArrayService {
 
     private static final Logger logger = LogManager.getLogger(CustomArrayServiceImpl.class);
 
-    public CustomArrayServiceImpl() {
-    }
-
     @Override
     public int findMin(CustomArray customArray) throws CustomArrayException {
         logger.info("Executing findMin operation");

@@ -10,9 +10,6 @@ public class ArraySortServiceImpl implements ArraySortService {
 
     private static final Logger logger = LogManager.getLogger(ArraySortServiceImpl.class);
 
-    public ArraySortServiceImpl() {
-    }
-
     @Override
     public void bubbleSort(CustomArray customArray) throws CustomArrayException {
         logger.info("Starting bubbleSort operation");
