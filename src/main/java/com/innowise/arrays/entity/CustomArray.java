@@ -1,9 +1,17 @@
 package com.innowise.arrays.entity;
 
+import com.innowise.arrays.observer.ArrayObserver;
+import com.innowise.arrays.util.IdGenerator;
+
 import java.util.Arrays;
 
 public class CustomArray extends AbstractArrayStructure {
     private int[] elements;
+    private ArrayObserver observer;
+
+    public long getId() {
+        return id;
+    }
 
     // Default constructor
     public CustomArray() {
@@ -13,12 +21,8 @@ public class CustomArray extends AbstractArrayStructure {
 
     // Constructor with parameters
     public CustomArray(int[] elements) {
-        super();
-        if (elements == null) {
-            this.elements = new int[0];
-        } else {
-            this.elements = elements.clone();
-        }
+        this.id = IdGenerator.generateId();
+        this.elements = elements.clone();
     }
 
     //Getter
@@ -28,23 +32,18 @@ public class CustomArray extends AbstractArrayStructure {
 
     //Setter
     public void setElements(int[] elements) {
-        if (elements == null) {
-            this.elements = new int[0];
-        } else {
-            this.elements = elements.clone();
-        }
+        this.elements = elements.clone();
+        notifyObserver();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
+    public void setObserver(ArrayObserver observer) {
+        this.observer = observer;
+    }
+
+    private void notifyObserver() {
+        if (observer != null) {
+            observer.update(this);
         }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        CustomArray that = (CustomArray) o;
-        return Arrays.equals(this.elements, that.elements);
     }
 
     @Override
@@ -53,8 +52,20 @@ public class CustomArray extends AbstractArrayStructure {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CustomArray)) {
+            return false;
+        }
+        CustomArray customArray = (CustomArray) o;
+        return id == customArray.id;
+    }
+
+    @Override
     public int hashCode() {
-        return Arrays.hashCode(elements);
+        return Long.hashCode(id);
     }
 
     @Override

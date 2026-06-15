@@ -4,6 +4,8 @@ import com.innowise.arrays.parser.ArrayLineParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.regex.Pattern;
+
 public class ArrayLineParserImpl implements ArrayLineParser {
 
     //Log4j2
