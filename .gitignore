@@ -2,10 +2,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### IntelliJ IDEA ###
-.idea/
-*.iws
-*.iml
-*.ipr
+.idea
 
 ### Eclipse ###
 .apt_generated
@@ -33,6 +30,7 @@ build/
 ### Mac OS ###
 .DS_Store
 
+.mvn
 
 ### Log4J2 ###
 logs/
